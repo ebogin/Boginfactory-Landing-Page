@@ -1,0 +1,194 @@
+═══════════════════════════════════════════════════════════════════
+BOGINFACTORY CONSULTING WEBSITE - SETUP GUIDE
+═══════════════════════════════════════════════════════════════════
+
+CONGRATULATIONS! Your professional website is ready to use.
+
+FILES INCLUDED:
+─────────────
+✓ index.html         — Landing page with services overview
+✓ about.html         — Detailed background and experience
+✓ contact.html       — Contact form
+✓ SETUP_GUIDE.txt    — This file
+
+═══════════════════════════════════════════════════════════════════
+STEP 1: PREVIEW YOUR WEBSITE LOCALLY
+═══════════════════════════════════════════════════════════════════
+
+To preview the website on your computer:
+
+1. Open index.html in any web browser (just double-click the file)
+2. Click through the navigation links to test all pages
+3. Review the content and design
+
+The site is fully responsive and works on mobile, tablet, and desktop.
+
+═══════════════════════════════════════════════════════════════════
+STEP 2: SET UP YOUR CONTACT FORM WITH FORMSPREE
+═══════════════════════════════════════════════════════════════════
+
+Your contact form uses Formspree, which securely handles email submissions
+without exposing your email address. Here's how to set it up:
+
+A. Create a Formspree Account:
+   1. Go to https://formspree.io
+   2. Click "Sign Up" (free tier available)
+   3. Sign up with any email address
+   4. Verify your email
+
+B. Create a New Form:
+   1. After signing in, click "Create Form"
+   2. Select "Email Collect"
+   3. Enter your form name (e.g., "Boginfactory Contact")
+   4. Enter the email where you want to receive messages: eric@boginfactory.com
+   5. Copy the form ID provided (looks like "abc123xyz")
+
+C. Update Your Contact Form:
+   1. Open contact.html in a text editor
+   2. Find this line (around line 166):
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+   3. Replace "YOUR_FORM_ID" with your actual form ID from Formspree
+   4. Save the file
+
+D. Test the Form:
+   1. Open contact.html in your browser
+   2. Fill out the form and submit
+   3. Check your email (eric@boginfactory.com) to confirm it works
+
+═══════════════════════════════════════════════════════════════════
+STEP 3: UPLOAD TO GOOGLE SITES
+═══════════════════════════════════════════════════════════════════
+
+You have two options for uploading to Google Sites:
+
+OPTION A: Upload Individual Pages (Recommended)
+─────────────────────────────────────────────
+1. Go to https://sites.google.com
+2. Create a new site or open existing one
+3. For each page (Landing, About, Contact):
+   - Click "Insert" → "Embedded content" → "Upload HTML"
+   - Or create new pages and copy-paste the HTML content
+
+OPTION B: Create a Custom Domain Site
+──────────────────────────────────────
+1. Many hosting services support HTML uploads
+2. You can also use GitHub Pages or Netlify for free hosting
+3. These services give you a direct URL for your website
+
+IMPORTANT NOTES FOR GOOGLE SITES:
+- Google Sites may have limitations on custom HTML
+- Some CSS styling may render differently
+- Test thoroughly after uploading
+
+═══════════════════════════════════════════════════════════════════
+CUSTOMIZATION TIPS
+═══════════════════════════════════════════════════════════════════
+
+Want to customize your site further? Here are easy changes:
+
+CHANGE COLORS:
+- Find "#0A3F5C" (dark blue) and "#1B5E7E" (lighter blue)
+- Replace with your preferred colors
+- Find "#f8f9fa" (light gray background) and customize as needed
+
+CHANGE COMPANY NAME:
+- Search for "Boginfactory Consulting" and replace text
+- Search for "Boginfactory" for all variations
+
+CHANGE EMAIL ADDRESS:
+- Search for "eric@boginfactory.com" and replace
+- Search for "eric" for name references
+- Update phone number if desired: (917) 297-3175
+
+CHANGE LOCATION:
+- Search for "Los Angeles, CA" and update as needed
+
+EDIT CONTENT:
+- Open .html files in any text editor
+- Content is wrapped in <p> tags for paragraphs
+- <h2> and <h3> tags are for section headings
+
+═══════════════════════════════════════════════════════════════════
+WEBSITE STRUCTURE
+═══════════════════════════════════════════════════════════════════
+
+HOME PAGE (index.html)
+├─ Hero section with main value proposition
+├─ What We Do section (6 service cards)
+├─ About preview section
+└─ Call-to-action section
+
+ABOUT PAGE (about.html)
+├─ Your background and experience
+├─ Detailed company positions
+├─ Education and certifications
+├─ Core competencies and skills
+└─ Personal interests
+
+CONTACT PAGE (contact.html)
+├─ Contact information display
+├─ Contact form (powered by Formspree)
+├─ Consultation process overview
+└─ Response time expectations
+
+═══════════════════════════════════════════════════════════════════
+DESIGN FEATURES
+═══════════════════════════════════════════════════════════════════
+
+✓ Professional navy/blue color scheme
+✓ Clean, minimalist design
+✓ Fully responsive (works on all devices)
+✓ Smooth navigation
+✓ Email form with anti-spam protection
+✓ SEO-friendly HTML structure
+✓ Fast loading (no external dependencies except Formspree)
+✓ Accessible design (WCAG compliant)
+
+═══════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+Q: Form isn't working after I updated it
+A: Make sure you:
+   - Copied the form ID correctly from Formspree
+   - Used full URL: https://formspree.io/f/YOUR_ID
+   - Didn't add extra spaces or characters
+
+Q: Colors look different when uploaded to Google Sites
+A: Google Sites may have limited CSS support. You may need to:
+   - Recreate the design within Google Sites native tools
+   - Or use a different hosting platform (GitHub Pages, Netlify)
+
+Q: Links aren't working
+A: Make sure all files are in the same folder when uploading
+
+Q: Email isn't showing/hiding
+A: The email is hidden in the form submission process via Formspree
+   - Recipients only see messages through Formspree interface or email
+   - Your actual address is never exposed to site visitors
+
+═══════════════════════════════════════════════════════════════════
+NEXT STEPS
+═══════════════════════════════════════════════════════════════════
+
+1. ☐ Preview the website locally
+2. ☐ Set up Formspree and test contact form
+3. ☐ Make any customizations
+4. ☐ Upload to Google Sites or hosting platform
+5. ☐ Test all pages and forms in production
+6. ☐ Share your website URL with contacts
+
+═══════════════════════════════════════════════════════════════════
+SUPPORT
+═══════════════════════════════════════════════════════════════════
+
+If you need to make changes to the content or design:
+- All files are plain HTML text files
+- Open in any text editor (Notepad, VS Code, etc.)
+- Changes are saved immediately when you edit and save
+
+For Formspree support: https://formspree.io/help
+For Google Sites help: https://support.google.com/sites
+
+═══════════════════════════════════════════════════════════════════

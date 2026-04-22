@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boginfactory Consulting - Strategic Advisory & Digital Transformation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: white;
+            color: #0A3F5C;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn.secondary:hover {
+            background: white;
+            color: #0A3F5C;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #0A3F5C;
+        }
+
+        .services-intro {
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            color: #0A3F5C;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* About Preview Section */
+        .about-preview {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-preview h2 {
+            font-size: 2.2rem;
+            color: #0A3F5C;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-content p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .expertise-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .expertise-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0A3F5C;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services h2, .about-preview h2, .cta h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Boginfactory Consulting</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Strategic Advisory & Digital Transformation</h1>
+            <p>Delivering data-driven consulting, web development, and native mobile app creation for iPhone and Apple Watch. Serving startups and established companies navigating complex technological and organizational challenges</p>
+            <div style="margin-top: 2rem;">
+                <a href="contact.html" class="btn">Get Started</a>
+                <a href="about.html" class="btn secondary" style="margin-left: 1rem;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>What We Do</h2>
+            <p class="services-intro">We specialize in helping organizations bridge the gap between engineering and business strategy through rigorous analysis and strategic execution</p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Product & Tech Strategy</h3>
+                    <p>Drive digital transformation for startups across AI and E-commerce. We build clear architectural roadmaps, define product vision, and translate complex technical challenges into executable business strategies.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Organizational Leadership</h3>
+                    <p>Transform organizational structures and team dynamics. We design scalable team structures, implement agile methodologies, and build high-performing teams that deliver at speed with collaborative, data-driven approaches.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>Move organizations from anecdotal to evidence-based decision making. We standardize KPIs, implement rigorous A/B testing protocols, and build comprehensive dashboards for leadership visibility and accountability.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Platform & Ecosystem Development</h3>
+                    <p>Build and scale marketplace platforms, APIs, and partner ecosystems. We define vision, architect technical solutions, and drive cross-functional execution to launch products that create sustainable business value.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Change Management & Transformation</h3>
+                    <p>Lead organizational transitions with minimal disruption. From platform migrations to process automation, we orchestrate change across multiple stakeholders and deliver business continuity.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Operations & Efficiency</h3>
+                    <p>Scale operations through process automation and systems optimization. We identify inefficiencies, design solutions, and implement systems that reduce costs while improving reliability and user experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mobile App Development</h3>
+                    <p>Build native iOS apps for iPhone and Apple Watch. We design and develop intuitive, performant mobile applications that extend your digital presence and engage users on their most personal devices.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Web Development & Design</h3>
+                    <p>Create responsive, modern websites from concept to launch. We build web applications that are fast, user-friendly, and aligned with your business goals and brand identity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview">
+        <div class="container">
+            <h2>Why Boginfactory?</h2>
+            <div class="about-content">
+                <div>
+                    <p>With over a decade of experience at the intersection of rigorous engineering and strategic business management, we bring a unique blend of technical depth, business acumen, and hands-on development expertise. Our track record includes:</p>
+                    <ul class="expertise-list">
+                        <li>Led product teams at $10B+ public companies (Bill.com, Intuit, Matterport)</li>
+                        <li>Architected scaling solutions managing $20M+ revenue streams</li>
+                        <li>Transformed operations, saving $2M+ in financial exposure</li>
+                        <li>Built and led high-performing distributed teams across multiple continents</li>
+                        <li>Designed and executed platform strategies across AI, E-commerce, and marketplaces</li>
+                        <li>Developed native iOS apps for iPhone and Apple Watch</li>
+                        <li>Created and launched custom web applications and platforms</li>
+                    </ul>
+                </div>
+                <div>
+                    <p><strong>Our Approach</strong></p>
+                    <p>We don't just advise—we partner with you to implement. We combine deep technical understanding with strategic business thinking to translate complex challenges into clear execution plans.</p>
+                    <p>Whether you're building from scratch or scaling an existing operation, we help you:</p>
+                    <ul class="expertise-list">
+                        <li>Define clear product and tech roadmaps</li>
+                        <li>Build scalable organizational structures</li>
+                        <li>Implement data-driven decision frameworks</li>
+                        <li>Navigate complex platform migrations and transformations</li>
+                        <li>Scale operations while maintaining quality and team culture</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="about.html" class="btn">Read Full Background</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Organization?</h2>
+            <p>Let's discuss how we can help you navigate your next challenge</p>
+            <a href="contact.html" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Boginfactory Consulting. All rights reserved. | Los Angeles, CA</p>
+        </div>
+    </footer>
+</body>
+</html>

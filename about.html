@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Boginfactory Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .content h2 {
+            color: #0A3F5C;
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #E8F1F7;
+            padding-bottom: 1rem;
+        }
+
+        .content h3 {
+            color: #0A3F5C;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .experience-block {
+            background: #f8f9fa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid #0A3F5C;
+            border-radius: 4px;
+        }
+
+        .experience-block h4 {
+            color: #0A3F5C;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-block .role {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-block li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .experience-block li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0A3F5C;
+            font-weight: bold;
+        }
+
+        .stat-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .stat .number {
+            color: #0A3F5C;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat .label {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .skills-column h4 {
+            color: #0A3F5C;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-column li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .skills-column li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0A3F5C;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: white;
+            color: #0A3F5C;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Boginfactory Consulting</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Boginfactory Consulting</h1>
+            <p>Delivering strategic leadership at the intersection of engineering and business</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content">
+        <div class="container">
+            <h2>Our Founder & Approach</h2>
+            <p>Boginfactory Consulting was founded to deliver strategic advisory for organizations navigating complex technological and business challenges. With over a decade of experience across industry-leading companies and startups, our founder brings a unique combination of technical depth, product leadership, and organizational design expertise.</p>
+
+            <div class="stat-box">
+                <div class="stat">
+                    <div class="number">10+</div>
+                    <div class="label">Years of Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="number">$20M+</div>
+                    <div class="label">Revenue Managed</div>
+                </div>
+                <div class="stat">
+                    <div class="number">50K+</div>
+                    <div class="label">Users Impacted</div>
+                </div>
+            </div>
+
+            <h2>Professional Background</h2>
+            <p>With roots in both engineering and business strategy, I've spent my career translating complex commercial challenges into clear architectural roadmaps and high-performing team structures.</p>
+
+            <div class="experience-block">
+                <h4>Bill.com (NYSE: BILL)</h4>
+                <div class="role">Lead Product Manager, AI & Digital Assistance (2026-Present)</div>
+                <ul>
+                    <li>Developing and executing an AI-driven Partner Support Platform strategy to transform help site from passive documentation into LLM-driven support "front door," targeting 40% live agent deflation</li>
+                    <li>Designing agentic AI workflows for Tier 1 Partner Agents, enabling autonomous resolution of high-volume payment and transaction queries</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Bill.com (NYSE: BILL)</h4>
+                <div class="role">Lead Product Manager, Billing (2024-2026)</div>
+                <ul>
+                    <li>Created and operationalized new Billing team structure, managing distributed engineering resources across US and India, resolving resourcing conflicts while enabling new product launches and tech-debt reduction</li>
+                    <li>Defined requirements for SOX-compliant Pricing Service using modern microservices architecture, enabling $20.5M FY26 target</li>
+                    <li>Authored strategic roadmap for billing component of enterprise-wide ERP platform; directed cross-functional vendor evaluations resolving 92 critical platform gaps</li>
+                    <li>Led cross-functional incident response team, averting $2.1M in financial exposure; scaled billing operations saving 1,300 hours/year through automation</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Boginfactory Consulting, LLC</h4>
+                <div class="role">President (2016-Present)</div>
+                <ul>
+                    <li>Drive digital transformation for startups across AI and E-commerce sectors; led F&B e-commerce revamp focused on UX optimization and scalable roadmap planning</li>
+                    <li>Standardized CSAT/NPS metrics and rigorous A/B testing protocols to move organizations from anecdotal to evidence-based decision making</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Matterport Inc (Nasdaq: MTTR)</h4>
+                <div class="role">Senior Product Manager, Platform Partner Ecosystem (2021-2022)</div>
+                <ul>
+                    <li>Defined Matterport Marketplace vision, securing executive buy-in via pro-forma financial model, translating technical "app store" integration into $5M business for ecosystem partners within first year</li>
+                    <li>Directed cross-functional teams to launch headless CMS-supported Marketplace, resolving critical developer friction through prioritized API/SDK roadmap</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Breeze Airways Inc</h4>
+                <div class="role">Acting Head of Product (2020-2021)</div>
+                <ul>
+                    <li>Served as primary strategic tech liaison to CFO, establishing inaugural product function and translating complex engineering roadmaps into clear financial narratives to secure capital investment</li>
+                    <li>Defined company's first 12-month technical roadmap, prioritizing 25+ high-impact epics to support scalable airline ecosystem</li>
+                    <li>Orchestrated transition from waterfall to agile delivery across four cross-functional teams to accelerate feature shipment</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Intuit Inc (Nasdaq: INTU)</h4>
+                <div class="role">Lead Product Manager, Expert Workforce Platform (2018-2020)</div>
+                <ul>
+                    <li>Spearheaded AI-driven transformation of onboarding operations by building custom cloud infrastructure pipeline to AWS data lake</li>
+                    <li>Orchestrated 12-month roadmap to consolidate 20,000+ users onto single cloud platform instance, ensuring technical milestones aligned with business growth targets</li>
+                    <li>Led design and launch of 6 new APIs to enable machine learning models identifying attrition patterns and driving operational efficiency</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Intuit Inc</h4>
+                <div class="role">Program Manager, Information Systems (2016-2018)</div>
+                <ul>
+                    <li>Managed $5M data migration initiative during major platform divestiture, mitigating information security risks for 5,000+ business-critical applications</li>
+                    <li>Created and implemented agile processes for integrating scope changes across 5 program tracks into program planning</li>
+                    <li>Developed and implemented new governance guidelines ensuring end users understand and take responsibility for platform use</li>
+                </ul>
+            </div>
+
+            <div class="experience-block">
+                <h4>Deloitte Consulting</h4>
+                <div class="role">Senior Consultant (2013-2015)</div>
+                <ul>
+                    <li>Organizational Design, Change Management, Enterprise Project Delivery</li>
+                    <li>Led change management for tech-driven finance transformation at major Silicon Valley company</li>
+                    <li>Led team of 3 designing and delivering Salesforce training to 600 users at large insurance carrier</li>
+                </ul>
+            </div>
+
+            <h2>Education & Certifications</h2>
+            <p><strong>University of Southern California, Marshall School of Business</strong> — Master of Business Administration (M.B.A.), May 2013, Technology Strategy</p>
+            <p><strong>Columbia University, School of Engineering and Applied Science</strong> — Bachelor of Science (B.S.), May 2005, Civil Engineering</p>
+            <p><strong>SAFe® 5 Scrum Master (SSM)</strong> — Agile Methodology Certification</p>
+
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h4>Strategic Leadership</h4>
+                    <ul>
+                        <li>Product Strategy & Roadmapping</li>
+                        <li>Tech Architecture & Platform Design</li>
+                        <li>Organizational Design & Transformation</li>
+                        <li>Marketplace & Ecosystem Development</li>
+                        <li>Change Management</li>
+                        <li>Business Planning & Financial Modeling</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h4>Technical & Analytical</h4>
+                    <ul>
+                        <li>Data-Driven Decision Making</li>
+                        <li>A/B Testing & Experimentation</li>
+                        <li>Analytics & Business Intelligence</li>
+                        <li>Cloud Infrastructure (AWS)</li>
+                        <li>API Architecture</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h4>Domain Expertise</h4>
+                    <ul>
+                        <li>AI/ML Product Development</li>
+                        <li>E-Commerce & Marketplaces</li>
+                        <li>FinTech & Payments</li>
+                        <li>Enterprise SaaS</li>
+                        <li>Platform Architecture</li>
+                        <li>Startup Operations</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h4>Tools & Platforms</h4>
+                    <ul>
+                        <li>SQL, ServiceNow, Salesforce</li>
+                        <li>QlikSense, Tableau, Jira</li>
+                        <li>AWS, SmartSheets, Aha!</li>
+                        <li>Excel, Microsoft Office Suite</li>
+                        <li>Google Suite, Figma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Beyond Work</h2>
+            <p>When not consulting, you'll find me volunteering as an instructor with <strong>Stoked.org</strong>, where I mentor under-served youth in skiing, snowboarding, and surfing. I'm also an avid traveler who's explored Germany, France, Italy, Brazil, Argentina, Nepal, Japan, and beyond.</p>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h2>Ready to Work Together?</h2>
+                <p>Let's discuss how Boginfactory Consulting can help you achieve your goals</p>
+                <a href="contact.html" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Boginfactory Consulting. All rights reserved. | Los Angeles, CA</p>
+        </div>
+    </footer>
+</body>
+</html>

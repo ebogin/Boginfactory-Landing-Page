@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Boginfactory Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info h2 {
+            color: #0A3F5C;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h3 {
+            color: #0A3F5C;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Form Styles */
+        .contact-form-wrapper {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-form-wrapper h2 {
+            color: #0A3F5C;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form-wrapper p {
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            color: #0A3F5C;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #0A3F5C;
+            box-shadow: 0 0 0 3px rgba(10, 63, 92, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #0A3F5C 0%, #1B5E7E 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 63, 92, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .honeypot {
+            display: none;
+        }
+
+        /* Info Section Below Form */
+        .additional-info {
+            background: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .additional-info h2 {
+            color: #0A3F5C;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .additional-info p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Boginfactory Consulting</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Let's discuss how we can help your organization succeed</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Connect</h2>
+                    <p>Whether you have a specific challenge in mind or just want to explore how Boginfactory Consulting can help, we'd love to hear from you. Fill out the form on the right and we'll get back to you as soon as possible.</p>
+
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p>eric@boginfactory.com</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Location</h3>
+                        <p>Los Angeles, CA<br>Available for remote engagement</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Response Time</h3>
+                        <p>We typically respond to inquiries within 24-48 hours</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>What to Expect</h3>
+                        <p>Initial conversations are always complimentary. We'll discuss your challenges, understand your goals, and determine if and how we can help. No pressure, no sales pitch—just honest, strategic advice.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you shortly</p>
+
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <!-- Honeypot field (hidden from real users) -->
+                        <input type="text" name="_gotcha" class="honeypot">
+
+                        <button type="submit">Send Message</button>
+                    </form>
+
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 1.5rem; text-align: center;">Your email address will not be shared or used for any other purpose.</p>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <h2>About Our Consultation Process</h2>
+                <p><strong>Initial Discovery Call (30 minutes)</strong> — We'll discuss your current challenges, organizational goals, and understand what success looks like for you.</p>
+                <p><strong>Proposal & Scope Definition</strong> — Based on our conversation, we'll outline a specific approach, timeline, and investment for engagement.</p>
+                <p><strong>Ongoing Partnership</strong> — We partner with you through implementation, providing strategic guidance, execution support, and course correction as needed.</p>
+                <p>Whether you need a focused project, ongoing advisory, or full-time interim leadership, we'll customize an engagement that fits your needs and budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Boginfactory Consulting. All rights reserved. | Los Angeles, CA</p>
+        </div>
+    </footer>
+</body>
+</html>
