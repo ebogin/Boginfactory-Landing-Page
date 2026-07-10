@@ -294,11 +294,12 @@
 
     function addCountry(name) {
       if (!byName[name]) return; // guard against a name typo in TOP/EU
-      const [n, iso2, dial] = byName[name];
+      const [n, iso2] = byName[name];
       const opt = document.createElement("option");
       // Stored value stays plain text (no emoji) so the CSV reads cleanly.
-      opt.value = n + " (+" + dial + ")";
-      opt.textContent = flagEmoji(iso2) + "  " + n + " (+" + dial + ")";
+      // No phone/dial code here — this form doesn't collect a phone number.
+      opt.value = n;
+      opt.textContent = flagEmoji(iso2) + "  " + n;
       countrySelect.appendChild(opt);
     }
 
