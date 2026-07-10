@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <!--
-  Grace's Holy Bell — waitlist signup form.
-  Live at https://boginfactory.com/grace-waitlist.html
+  Grace's Holy Bell — support "Contact Us" form.
+  Live at https://boginfactory.com/grace-contact.html
 
   ⚠️ THIS FILE (under docs/) IS THE SOURCE COPY ONLY. boginfactory.com is served
   by a SEPARATE repo: ebogin/Boginfactory-Landing-Page. To publish any change,
-  mirror this file (and grace-waitlist-thanks.html) into that repo's root and
-  push there — editing docs/ here does nothing to the live site. Same mirror
-  pattern as graces-privacy-policy.html. See ../waitlist/SETUP.md Step 6.
+  mirror this file into that repo's root and push there — editing docs/ here
+  does nothing to the live site. Same mirror pattern as grace-waitlist.html /
+  graces-privacy-policy.html. See ../waitlist/SETUP.md Step 6.
 
-  Styling mirrors graces-privacy-policy.html (the app's LCD-green theme).
+  Styling mirrors grace-waitlist.html (the app's LCD-green theme).
 
-  SETUP: set WORKER_ENDPOINT below to your deployed Cloudflare Worker URL.
-  See ../waitlist/SETUP.md for the full backend walkthrough.
+  Submits to the same Cloudflare Worker as the waitlist, at POST /contact.
+  Messages are delivered to eric@boginfactory.com. See ../waitlist/SETUP.md.
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the Waitlist — Grace's Holy Bell</title>
-  <meta name="description" content="Join the waiting list for Grace's Holy Bell.">
-  <meta name="robots" content="noindex">
+  <title>Contact Us — Grace's Holy Bell</title>
+  <meta name="description" content="Questions or feedback about Grace's Holy Bell? Send us a message.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -84,7 +83,7 @@
 
     .field { margin: 0 0 22px; }
 
-    input, select {
+    input, select, textarea {
       width: 100%;
       font-family: "Press Start 2P", monospace;
       font-size: 11px;
@@ -96,6 +95,13 @@
       -webkit-font-smoothing: none;
     }
 
+    /* Message box: same LCD look as the inputs, but a large open field. */
+    textarea {
+      min-height: 140px;
+      line-height: 1.9;
+      resize: vertical;
+    }
+
     /* The dropdown keeps the page's pixel font; flag emoji still render via
        the browser's per-glyph emoji fallback. */
     select {
@@ -103,64 +109,9 @@
       -webkit-appearance: none;
     }
 
-    input:focus, select:focus {
+    input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--lcd-slider);
-    }
-
-    /* SMS-authorization checkbox row. */
-    .check-field {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 0 0 22px;
-    }
-
-    .check-field input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      flex: 0 0 auto;
-      margin: 0;
-      background: var(--lcd-inner);
-      border: 2px solid var(--lcd-border);
-      border-radius: 4px;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .check-field input[type="checkbox"]:focus {
-      outline: none;
-      border-color: var(--lcd-slider);
-    }
-
-    .check-field input[type="checkbox"]:checked {
-      background: var(--lcd-slider);
-      border-color: var(--lcd-dark);
-    }
-
-    /* Checkmark drawn as a rotated border so it needs no font or image.
-       Centered via 50%/50% anchor; the -60% Y nudge accounts for the check's
-       visual weight sitting below its geometric center. */
-    .check-field input[type="checkbox"]:checked::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 4px;
-      height: 8px;
-      border: solid var(--lcd-on-dark);
-      border-width: 0 2px 2px 0;
-      transform: translate(-50%, -60%) rotate(45deg);
-    }
-
-    .check-field label {
-      margin: 0;
-      font-size: 8px;
-      line-height: 1.9;
-      color: var(--lcd-mid);
-      cursor: pointer;
     }
 
     button {
@@ -210,13 +161,13 @@
 </head>
 <body>
   <main class="card">
-    <h1>JOIN THE<br>WAITLIST</h1>
+    <h1>CONTACT US</h1>
     <p class="intro">
-      Grace's Holy Bell is in beta. Leave your details and we'll reach out when
-      it's released.
+      Questions or feedback about Grace's Holy Bell? Send us a message and
+      we'll get back to you.
     </p>
 
-    <form id="waitlist-form" novalidate>
+    <form id="contact-form" novalidate>
       <div class="field">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" autocomplete="name">
@@ -232,35 +183,22 @@
         </select>
       </div>
       <div class="field">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
-      </div>
-      <div class="field">
-        <label for="instagram">Instagram Handle (optional)</label>
-        <input type="text" id="instagram" name="instagram" autocomplete="off" placeholder="@yourhandle">
-      </div>
-
-      <div class="check-field">
-        <input type="checkbox" id="sms-consent" name="sms-consent">
-        <label for="sms-consent">
-          I authorize Grace's Holy Bell to send me SMS text messages about the
-          app. Message &amp; data rates may apply.
-        </label>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6"></textarea>
       </div>
 
       <!-- Honeypot: hidden from people, tempting to bots. Leave blank. -->
       <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"
              aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 
-      <button type="submit" id="submit-btn">JOIN THE LIST</button>
+      <button type="submit" id="submit-btn">SEND MESSAGE</button>
       <p class="status" id="status"></p>
     </form>
   </main>
 
   <p class="footer">
     Grace's Holy Bell &middot; Boginfactory &middot;
-    <a href="graces-privacy-policy.html">Privacy Policy</a> &middot;
-    <a href="grace-contact.html">Contact Us</a>
+    <a href="graces-privacy-policy.html">Privacy Policy</a>
   </p>
 
   <script>
@@ -268,15 +206,6 @@
     // Set this to your deployed Cloudflare Worker URL. See waitlist/SETUP.md.
     const WORKER_ENDPOINT = "https://grace-waitlist.grace-waitlist.workers.dev";
     // ─────────────────────────────────────────────────────────────────────
-
-    // Referrer code from the QR / shared link (?ref=...). May be empty.
-    const referrer = new URLSearchParams(location.search).get("ref") || "";
-
-    // Which surface the share link came from (?src=phone|watch). Lets us tell
-    // whether a scan originated from the iPhone's share sheet or the watch's
-    // "Join us in prayer" screen. Anything unexpected is recorded as "".
-    const rawSource = new URLSearchParams(location.search).get("src") || "";
-    const source = (rawSource === "phone" || rawSource === "watch") ? rawSource : "";
 
     // ── Country dropdown ──────────────────────────────────────────────────
     // Standard ISO 3166 country list with calling codes. Flags are rendered as
@@ -387,46 +316,29 @@
     // Remaining countries, alphabetical (COUNTRIES is already sorted by name).
     COUNTRIES.map((c) => c[0]).filter((n) => !grouped.has(n)).forEach(addCountry);
 
-    // Mint THIS submitter's own referral code client-side, so their thank-you
-    // page and confirmation email can carry a share link without any extra
-    // backend round-trip.
-    function newCode() {
-      const alphabet = "abcdefghjkmnpqrstuvwxyz23456789";
-      let code = "";
-      const rnd = new Uint32Array(8);
-      crypto.getRandomValues(rnd);
-      for (let i = 0; i < 8; i++) code += alphabet[rnd[i] % alphabet.length];
-      return code;
-    }
-    const myCode = newCode();
-
-    const form = document.getElementById("waitlist-form");
+    // ── Submit ────────────────────────────────────────────────────────────
+    const form = document.getElementById("contact-form");
     const statusEl = document.getElementById("status");
     const submitBtn = document.getElementById("submit-btn");
 
-    // Light phone check: ignore spaces, dashes, parens, and a leading +; what's
-    // left should be 7–15 digits (the E.164 range). Deliberately permissive.
-    function looksLikePhone(value) {
-      const digits = value.replace(/[\s\-().]/g, "").replace(/^\+/, "");
-      return /^[0-9]{7,15}$/.test(digits);
+    function isEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     }
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const phone = document.getElementById("phone").value.trim();
-      const smsConsent = document.getElementById("sms-consent").checked;
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-      // Validate phone only when one was entered (the field stays optional).
-      if (phone && !looksLikePhone(phone)) {
+      if (!isEmail(email)) {
         statusEl.className = "status error";
-        statusEl.textContent = "Please enter a valid phone number.";
+        statusEl.textContent = "Please enter a valid email.";
         return;
       }
-      // Can't authorize SMS without a number to text.
-      if (smsConsent && !looksLikePhone(phone)) {
+      if (!message) {
         statusEl.className = "status error";
-        statusEl.textContent = "Add a valid phone number to receive SMS updates.";
+        statusEl.textContent = "Please enter a message.";
         return;
       }
 
@@ -435,27 +347,23 @@
       submitBtn.disabled = true;
 
       const payload = {
-        email:      document.getElementById("email").value.trim(),
-        name:       document.getElementById("name").value.trim(),
-        country:    document.getElementById("country").value.trim(),
-        phone:      phone,
-        instagram:  document.getElementById("instagram").value.trim(),
-        smsConsent: smsConsent,
-        referrer:   referrer,
-        source:     source,
-        myCode:     myCode,
-        website:    document.getElementById("website").value.trim(), // honeypot
+        name:    document.getElementById("name").value.trim(),
+        email:   email,
+        country: document.getElementById("country").value.trim(),
+        message: message,
+        website: document.getElementById("website").value.trim(), // honeypot
       };
 
       try {
-        const res = await fetch(WORKER_ENDPOINT, {
+        const res = await fetch(WORKER_ENDPOINT + "/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
         if (!res.ok) throw new Error("Request failed: " + res.status);
-        // Success — hand off to the thank-you page with this submitter's code.
-        location.href = "grace-waitlist-thanks.html?ref=" + encodeURIComponent(myCode);
+        form.reset();
+        statusEl.className = "status";
+        statusEl.textContent = "Thanks — your message is on its way. We'll be in touch.";
       } catch (err) {
         statusEl.className = "status error";
         statusEl.textContent = "Something went wrong. Please try again.";
