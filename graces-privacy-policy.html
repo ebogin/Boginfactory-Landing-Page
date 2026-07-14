@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <!--
-  AI AGENT INSTRUCTION (not for human readers):
-  This page mirrors the Grace's Holy Bell in-app privacy policy.
-  The SOURCE OF TRUTH is the Privacy Policy screen inside the iOS app itself.
-  Before making any edits to this page, retrieve the current policy text from
-  the app (Settings → Privacy Policy within Grace's Holy Bell) and use that as
-  the authoritative content. Do not invent or update policy language here
-  independently — only sync changes that originated in the app.
+  MAINTENANCE NOTE (for any human or AI editing this policy):
+  This page is the public version of Grace's Holy Bell's privacy policy,
+  deployed at https://boginfactory.com/graces-privacy-policy.html
+
+  It MUST stay identical to the in-app policy in:
+      Graces Holy Bell/Views/PrivacyPolicyView.swift
+  If you change the policy text here, also update that Swift view (and the
+  effective date) so the in-app and public versions match exactly.
 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Grace's Holy Bell</title>
-  <meta name="description" content="Grace's Holy Bell collects no personal data. Privacy policy.">
+  <meta name="description" content="Grace's Holy Bell keeps your prayer logs on your device and collects only optional, anonymous usage analytics. Read the privacy policy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -116,18 +117,81 @@
 <body>
   <main class="card">
     <h1>PRIVACY POLICY</h1>
-    <p class="effective">Effective June 12, 2026</p>
+    <p class="effective">Effective June 27, 2026</p>
 
     <p class="intro">
-      Grace's Holy Bell is built to respect your privacy. We do not collect,
-      store, or share any personal data about you.
+      Grace's Holy Bell is built to respect your privacy. Your prayer logs stay
+      on your device. The only thing the app sends anywhere is optional,
+      anonymous usage analytics &mdash; which you can turn off at any time. It
+      never records the content of your prayers, and never your name, email, or
+      account. Two optional things are described below: the anonymous analytics,
+      and our waitlist signup.
     </p>
 
     <h2>WHAT WE COLLECT</h2>
     <p>
-      Nothing. Grace's Holy Bell has no servers and never sends your information
-      anywhere. We don't ask for your name, email, contacts, or location, and
-      there are no accounts or sign-ups.
+      On your device, the app keeps your prayer logs and Amen Alarm settings (see
+      &ldquo;What Stays on Your Device&rdquo;). There are no accounts and no
+      sign-ups.
+    </p>
+    <p>
+      The only information the app sends off your device is anonymous usage
+      analytics, and only while analytics are turned on &mdash; see
+      &ldquo;Anonymous Analytics&rdquo; below. We don't ask for your name, email,
+      contacts, or GPS location. The one place we collect contact details is our
+      optional waitlist signup &mdash; see &ldquo;Waitlist Signup&rdquo; below.
+    </p>
+
+    <h2>ANONYMOUS ANALYTICS</h2>
+    <p>
+      To learn how the app is used &mdash; and, true to its purpose, whether it
+      actually helps people stay mindful of how often and how long they pray
+      &mdash; we collect anonymous usage analytics through PostHog, an analytics
+      service. The data for this app is processed on PostHog's servers in the
+      European Union.
+    </p>
+    <p>
+      It's tied only to a random ID created on your device when you install the
+      app &mdash; not your name, Apple ID, email, or phone number &mdash; and it
+      isn't linked to your identity. We record events like when a prayer session
+      starts and ends, roughly how long sessions last and how they're spaced (in
+      broad time ranges), which features you use, and your app, device, and
+      operating-system version. We never record the content of your prayers.
+    </p>
+    <p>
+      When your device sends this data, PostHog's servers use its IP address to
+      determine an approximate location &mdash; your country and city, never your
+      precise GPS location. We use this only to understand where the app is being
+      used; we never use it to identify you, and you can stop it entirely by
+      turning analytics off.
+    </p>
+    <p>
+      You control this in Settings, under Privacy. Outside the European Union, the
+      United Kingdom, and the EEA, analytics are on by default and you can opt out
+      at any time. Within them, analytics stay off until you choose to opt in.
+    </p>
+
+    <h2>WAITLIST SIGNUP</h2>
+    <p>
+      If you use &ldquo;Share with a Friend&rdquo; in the app and a friend opens
+      your link, it takes them to a signup page on this website. This is the only
+      place the project collects information.
+    </p>
+    <p>
+      The form asks for an email, name, country, and phone number, and all of them
+      are optional. If you check the box authorizing it, we use your phone number
+      to send SMS text messages about the app; message and data rates may apply,
+      and we keep a record of that consent. We also store the anonymous referral
+      code from the link that was used, so we know who to thank for the
+      introduction &mdash; this code is not tied to your identity in the app.
+    </p>
+    <p>
+      What's submitted is stored privately and used only to send a confirmation,
+      to reach out about the app's release, and &mdash; if you authorized it
+      &mdash; to text you about the app. There is no public waiting list, and we
+      never sell or share it with advertisers. To be removed, or to stop the
+      texts, email
+      <a href="mailto:gracesholybell@boginfactory.com">gracesholybell@boginfactory.com</a>.
     </p>
 
     <h2>WHAT STAYS ON YOUR DEVICE</h2>
@@ -149,8 +213,10 @@
 
     <h2>THIRD PARTIES</h2>
     <p>
-      The app includes no third-party analytics, advertising, or tracking tools.
-      We don't share data with anyone — because we don't have any to share.
+      The app uses one third-party service: PostHog, for the anonymous analytics
+      described above. It includes no advertising and no cross-app tracking tools.
+      Our waitlist signup (on this website) uses Resend to send its confirmation
+      email. We don't sell your information or share it with advertisers.
     </p>
 
     <h2>TRACKING</h2>
@@ -160,7 +226,9 @@
 
     <h2>CHILDREN</h2>
     <p>
-      The app collects no data from anyone, including children.
+      The app isn't directed at children, and the analytics it collects are
+      anonymous and not tied to anyone's identity. We don't knowingly collect
+      personal information from children.
     </p>
 
     <h2>CHANGES</h2>
@@ -172,12 +240,15 @@
 
     <h2>CONTACT</h2>
     <p>
-      Questions? Email <a href="mailto:eric@boginfactory.com">eric@boginfactory.com</a>.
+      Questions? <a href="grace-contact.html">Contact us</a>.
     </p>
   </main>
 
   <p class="footer">
-    Grace's Holy Bell &middot; Boginfactory
+    <a href="grace-holy-bell.html">Grace's Holy Bell</a> &middot;
+    <a href="https://boginfactory.com">Boginfactory</a> &middot;
+    <a href="graces-privacy-policy.html">Privacy Policy</a> &middot;
+    <a href="grace-contact.html">Contact Us</a>
   </p>
 </body>
 </html>
